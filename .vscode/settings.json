@@ -1,0 +1,5 @@
+{
+    "python.analysis.extraPaths": [
+        "./chapter03/todo/src/todo"
+    ]
+}
