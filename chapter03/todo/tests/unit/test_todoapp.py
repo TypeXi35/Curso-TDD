@@ -22,3 +22,15 @@ class TestTODOApp(unittest.TestCase):
         
         dbmanager.load.assert_called_with()
         assert app._entries == ["buy milk", "buy water"]
+    
+    def test_save(self):
+        dbmanager = Mock(
+            load = Mock(return_value = ["buy milk", "buy water"]),
+            save = Mock()
+        )
+        
+        app = TODOApp(io = (Mock(return_value="quit"), Mock()), dbmanager=dbmanager)
+        
+        app.run()
+        
+        dbmanager.save.assert_called_with(["buy milk", "buy water"])

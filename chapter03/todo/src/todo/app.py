@@ -18,6 +18,10 @@ class TODOApp:
             self._dispatch(command)
         self._out("bye!\n")
         
+        if self._dbmanager is not None:
+            self._dbmanager.save(self._entries)
+        self._out("bye!\n")
+        
     def items_list(self):
         enumerated_items = enumerate(self._entries, start=1)
         return "\n".join(

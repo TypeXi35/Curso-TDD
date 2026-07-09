@@ -92,7 +92,7 @@ class TestTODOAcceptance(unittest.TestCase):
                 app_thread = threading.Thread(
                 target=TODOApp(
                     io=(self.fake_input, self.fake_output),
-                    dbpath=tmpdirname
+                    dbmanager=BasicDB(pathlib.Path(tmpdirname, "db"))
                     ).run,
                     daemon=True
                     )
