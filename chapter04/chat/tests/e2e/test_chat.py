@@ -5,8 +5,6 @@ from chat.client import ChatClient
 from chat.server import new_chat_server
 
 
-
-
 class TestChatMultiUser(unittest.TestCase):
     def test_many_users(self):
         with new_chat_server() as srv:
